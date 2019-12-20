@@ -2,3 +2,23 @@
 .w(@px) {
     width : unit(@px / @remSize, rem); // unit 给参数 1 添加参数 2 的单位
 }
+
+// 封装图片 url 地址
+.bg-image(@url) {
+    background-image: ~"url(@{url}@2x.png)";
+    @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3) {
+        background-image: ~"url(@{url}@3x.png)";
+    }
+}
+
+// 封装图片 url 地址
+.background-image(@url) {
+    background-image: url('../assets/@{url}.png');
+}
+
+// 封装不换行多余文本以... 显示
+.no-wrap() {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}

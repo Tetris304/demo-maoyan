@@ -12,10 +12,10 @@ export default {
 
 <style lang="less" scoped>
 // 引入一个 less 文件
-@import '../style/index.less';
+@import '~style/index.less';
 
 .maoyan-header {
-    height: 50.5px;
+    height: 51.5px;
     color: #fff;
     background: @red;
     border-bottom: 1px solid @red;

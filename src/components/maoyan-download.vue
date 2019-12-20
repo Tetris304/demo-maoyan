@@ -42,7 +42,7 @@ export default {
     display: block;
     .download-app-bar {
         position: relative;
-        height: 63px;
+        height: 64px;
         background-color: #fff;
         border-bottom: 1px solid #e6e6e6;
         .logo {
@@ -59,11 +59,12 @@ export default {
             .app-name {
                 font-size: 17px;
                 color: #222;
-                line-height: 24px;
+                line-height: 23px;
             }
             .app-desc {
                 font-size: @fs-xs;
                 color: #999;
+                line-height: 16px;
             }
         }
         .btn-open-app {

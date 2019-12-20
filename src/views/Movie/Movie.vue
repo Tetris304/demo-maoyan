@@ -1,7 +1,7 @@
 <template>
     <div class="movie">
         <!-- 使用 下载app 组件 -->
-        <maoyan-download></maoyan-download>
+        <maoyan-download v-show="dlState"></maoyan-download>
         <!-- 嵌套组件 -->
         <div class="top-bar">
             <div class="white-bg top-bar-bg">
@@ -15,7 +15,7 @@
                 <div class="search-bar" :style="{backgroundImage:'url(' + searchPic + ')'}"></div>
             </div>
         </div>
-        <router-view></router-view>
+        <router-view @change="changeDownloadStatue"></router-view>
     </div>
 </template>
 
@@ -38,13 +38,21 @@ export default {
                     name : '即将上映'
                 }
             ],
-            searchPic : search
+            searchPic : search,
+            // 下载组件状态判定
+            dlState : true
+        }
+    },
+    methods : {
+        changeDownloadStatue (val) {
+            // 将子组件传来的值赋给 this.dlState ，稍后进行元素显示隐藏的判定
+            this.dlState = val
         }
     },
     // 注册组件
     components : {
         maoyanDownload
-    }
+    },
 }
 </script>
 
@@ -53,7 +61,7 @@ export default {
 @import '~style/index.less';
 
 .movie {
-    background-color: #6f6f6f;
+    background-color: #fff;
     .top-bar {
         border-bottom: 1px solid #e6e6e6;
         height: 44px;
@@ -65,7 +73,7 @@ export default {
             display: flex;
             -webkit-box-align: center;
             align-items: center;
-            height: 44px;
+            height: 43px;
             -webkit-box-pack: justify;
             justify-content: space-between;
         }
@@ -99,8 +107,8 @@ export default {
         .switch-hot {
             display: -webkit-box;
             display: flex;
-            height: 44px;
-            line-height: 44px;
+            height: 43px;
+            line-height: 43px;
             position: relative;
             .switch-item {
                 font-size: 15px;
@@ -121,7 +129,7 @@ export default {
             height: 20px;
             background-repeat: no-repeat;
             background-size: 20px;
-            padding: 10px 15px 10px 10px;
+            padding: 10px 35px 10px 10px;
             background-position: 10px;
         }
     }

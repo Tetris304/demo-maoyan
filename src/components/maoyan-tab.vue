@@ -37,7 +37,7 @@ export default {
 
 <style lang="less" scoped>
 // 引入一个 less 文件
-@import '../style/index.less';
+@import '~style/index.less';
 
 .maoyan-tab {
     position: fixed;

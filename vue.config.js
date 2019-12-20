@@ -11,13 +11,13 @@ module.exports = {
     // webpack-dev-server 相关配置
     devServer : {
         proxy : { // 配置多个代理
-            'api' : {
-                target : 'http://ustbhuangyi.com', // 要跨域的域名(接口根路径)
+            'movies' : {
+                target : 'http://m.maoyan.com', // 要跨域的域名(接口根路径)
                 // ws : true, // 如果要代理 webSockets，配置这个参数
                 secure : false, // 如果是https接口，需要配置这个参数
                 changeOrigin : true, // 是否开启跨域
                 pathRewrite : { // 重定向某一个 路径
-                    '^/api' : ''
+                    '^/movies' : ''
                 }
             }
         }
